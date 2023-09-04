@@ -29,6 +29,7 @@ function updateView() {
 function createHtmlRow(i) {
     const task = tasks[i];
     const checkedHtml = task.isDone ? 'checked="checked"' : '';
+    let myDate = task.timeNow ? task.timeNow.toLocaleString() : '';
     if (!task.editMode) return `<tr>
         <td>${task.description}</td>
         <td>${task.responsible}</td>
@@ -37,7 +38,7 @@ function createHtmlRow(i) {
         <div>${task.dayToComplete}</div>
         <div>${task.timeToComplete}</div>
         </td>
-        <td>${task.timeNow}</td>
+        <td>${myDate}</td>
         <td>
         <button onclick ="deleteTask(${i})">Slett</button>
         <button onclick ="editTask(${i})">Rediger</button>
