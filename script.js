@@ -50,10 +50,10 @@ function createHtmlRow(i) {
         <td><input id="editResponsible${i}" type="text" value="${task.responsible}"/></td>
         <td><input onchange="changeIsDone(this, ${i})" type="checkbox" ${checkedHtml} /></td>
         <td>
-        <input id="editDayToComplete" type="date" value="${task.dayToComplete}"/>
-        <input id="editTimeToComplete" type="time" value="${task.timeToComplete}"/>
+        <div>${task.dayToComplete}</div>
+        <div>${task.timeToComplete}</div>
         </td>
-        <td>${task.timeNow}</td>
+        <td>${myDate}</td>
             <td>
                 <button onclick ="updateTask(${i})">Lagre</button>
             </td>
